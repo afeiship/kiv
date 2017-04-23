@@ -1,29 +1,35 @@
 import './style.scss';
+import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import noop from 'noop';
+import ReactSelectedItems from 'react-selected-items';
+import ReactRadioItem from './react-radio-item';
 
-export default class extends React.Component{
+
+export default class extends PureComponent {
   static propTypes = {
-    cssClass:React.PropTypes.string,
-    defaultValue:React.PropTypes.array,
-    value:React.PropTypes.array,
+    className: PropTypes.string
   };
 
-  static defaultProps = {
-    defaultValue:[],
-    value:[],
-    onChange:null
-  };
+  static defaultProps = {};
 
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  render(){
+  _onChange() {
+    console.log('change...');
+  }
+
+  render() {
+    const {className, ...props} = this.props;
     return (
-      <div className={classNames('react-radio-group',this.props.cssClass)}>
-        Hello React!
-      </div>
+      <ReactSelectedItems type='single' {...props}
+                          className={classNames('react-radio-group', className)}>
+        {this.props.children || <ReactRadioItem />}
+      </ReactSelectedItems>
     );
   }
 }

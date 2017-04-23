@@ -1,3 +1,49 @@
-.react-radio-group{
-  color:#000;  
+.react-radio {
+  &-item {
+    height: 2.4em;
+    line-height: 2.4em;
+    display: block;
+    padding: 0 1em;
+    &:active {
+      background-color: #eee;
+    }
+
+    + .react-radio-item {
+      border-top: 1px solid #eee;
+    }
+
+    > .right {
+      display: inline-block;
+      float: right;
+      &::after{
+        content:'';
+        display: inline-block;
+        border: 2px solid #007aff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        width: 5px;
+        height: 10px;
+      }
+    }
+
+    &[disabled] {
+      opacity: 0.6;
+      > .right {
+        border-color: #eee;
+      }
+    }
+    &[data-selected=true] {
+      > .right {
+        display: inline-block;
+      }
+    }
+    &[data-selected=false] {
+      > .right {
+        display: none;
+      }
+    }
+
+  }
+  &-group {
+  }
 }

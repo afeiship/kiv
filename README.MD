@@ -1,5 +1,27 @@
-#react-radio-group
-> Abstract radio group component for react.
+# react-radio-group
+> Abstract radio component for react.
+
+
+## properties:
+```javascript
+  static propTypes = {
+    className:PropTypes.string
+  };
+```
+
+## usage:
+```jsx
+class App extends React.Component{
+  render(){
+    return (
+      <div className="hello-react-radio-group">
+        <ReactRadioGroup />
+    </div>
+    );
+  }
+}
+```
+
 
 
 ## resource:
@@ -7,14 +29,3 @@
 + https://github.com/steven5538/vue-button
 + https://yarnpkg.com/en/docs/install
 
-
-## props:
-| name | type | value | description |
-| :----| :----| :----| :----|
-| visible  | Boolean | true/false | v-show |
-
-
-## usage:
-```html
-<react-radio-group :visible="true" />
-```
