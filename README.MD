@@ -11,8 +11,7 @@
   static propTypes = {
     className: PropTypes.string,
     items: PropTypes.array,
-    valueKey: PropTypes.string,
-    textKey: PropTypes.string,
+    template: PropTypes.func
   };
 ```
 
@@ -42,6 +41,14 @@ class App extends React.Component {
     ]
   };
 
+  _template(item,iconEl){
+    return (
+      <div className="item">
+        {item.text} {iconEl}
+      </div>
+    )
+  }
+
   _change(inEvent) {
     console.log(inEvent.target.value);
   }
@@ -49,7 +56,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="hello-react-radio-group">
-        <ReactRadioGroup valueKey="val" items={this.state.items}
+        <ReactRadioGroup items={this.state.items} template={this._template.bind(this)}
                          onChange={this._change.bind(this)}/>
       </div>
     );
