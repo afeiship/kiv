@@ -4,19 +4,16 @@
     line-height: 2.4em;
     display: block;
     padding: 0 1em;
+    border-top: 1px solid #eee;
     &:active {
       background-color: #eee;
-    }
-
-    + .react-radio-item {
-      border-top: 1px solid #eee;
     }
 
     > .right {
       display: inline-block;
       float: right;
-      &::after{
-        content:'';
+      &::after {
+        content: '';
         display: inline-block;
         border: 2px solid #007aff;
         border-width: 0 2px 2px 0;
@@ -28,6 +25,7 @@
 
     &[disabled] {
       opacity: 0.6;
+      pointer-events: none;
       > .right {
         border-color: #eee;
       }
@@ -44,6 +42,7 @@
     }
 
   }
+
   &-group {
   }
 }

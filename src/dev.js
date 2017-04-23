@@ -1,37 +1,40 @@
 import './dev.scss';
 import ReactRadioGroup from './main';
-
+import {ReactSelectedItem} from 'react-selected-items';
 
 class App extends React.Component {
   state = {
     items: [
       {
-        value: 1,
+        val: 1,
         text: '选项1'
       }, {
-        value: 2,
+        val: 2,
+        disabled: true,
         text: '选项2'
       }, {
-        value: 3,
-        text: '选项3'
+        val: 3,
+        text: '选项3',
+        selected: true,
       }, {
-        value: 4,
+        val: 4,
         text: '选项4'
       }, {
-        value: 5,
+        val: 5,
         text: '选项5'
       }
     ]
   };
 
-  _change(inEvent){
+  _change(inEvent) {
     console.log(inEvent.target.value);
   }
 
   render() {
     return (
       <div className="hello-react-radio-group">
-        <ReactRadioGroup items={this.state.items} onChange={this._change.bind(this)} value={[1]}/>
+        <ReactRadioGroup valueKey="val" items={this.state.items}
+                         onChange={this._change.bind(this)}/>
       </div>
     );
   }
