@@ -2,7 +2,6 @@ import './style.scss';
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from 'noop';
 import {ReactSelectedItems, ReactSelectedItem} from 'react-selected-items';
 
 
@@ -38,6 +37,7 @@ export default class extends PureComponent {
           const text = item[textKey];
           delete props[valueKey];
           delete props[textKey];
+          
           return (
             <ReactSelectedItem
               { ...props}
