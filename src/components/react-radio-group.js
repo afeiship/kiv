@@ -37,7 +37,7 @@ export default class extends PureComponent {
           const text = item[textKey];
           delete props[valueKey];
           delete props[textKey];
-          
+
           return (
             <ReactSelectedItem
               { ...props}
