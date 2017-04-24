@@ -24,8 +24,9 @@ export default class extends React.PureComponent {
       <ReactSelectedItems type="radio" {...props} className={classNames('react-radio-group', className)}>
         {
           items.map((item, index) => {
+            const {selected,disabled} = item;
             return (
-              <ReactSelectedItem data={item} key={index} className="react-radio">
+              <ReactSelectedItem selected={selected} disabled={disabled} data={item} key={index} className="react-radio">
                 {template(item, <em className="react-radio-icon"/>)}
               </ReactSelectedItem>
             );
