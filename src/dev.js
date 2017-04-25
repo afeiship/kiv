@@ -29,7 +29,7 @@ class App extends React.Component {
   _template(item,iconEl){
     return (
       <div className="item">
-        {item.text} {iconEl}
+        {item.text} <i className="abc">12</i>
       </div>
     )
   }
