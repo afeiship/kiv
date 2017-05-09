@@ -1,4 +1,5 @@
 import './dev.scss';
+
 import ReactRadioGroup from './main';
 import {ReactSelectedItem} from 'react-selected-items';
 
@@ -27,15 +28,17 @@ class App extends React.Component {
   };
 
   _template(item,iconEl){
+    console.log(item);
     return (
-      <div className="item">
-        {item.text} <i className="abc">12</i>
+      <div className="item" data-ss={item.selected}>
+        {item.text}->{String(item.selected)} <i className="abc">[X]</i> {iconEl}
       </div>
     )
   }
 
   _change(inEvent) {
-    console.log(inEvent.target.value);
+    // console.log(inEvent.target.value);
+    this.setState({items:inEvent.target.value.slice(0)})
   }
 
   render() {
