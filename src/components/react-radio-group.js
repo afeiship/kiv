@@ -26,7 +26,6 @@ export default class extends React.PureComponent {
         {
           items.map((item, index) => {
             const {selected,disabled} = item;
-            console.log('change',selected,disabled);
             return (
               <ReactSelectedItem selected={selected} disabled={disabled} data={item} key={index} className="react-radio">
                 {template(item, <em className="react-radio-icon"/>)}
