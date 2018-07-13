@@ -1,13 +1,13 @@
 import './style.scss';
 
-import React, {PureComponent} from 'react';
+import React, { Component } from 'react';
 import {ReactSelectedItem, ReactSelectedItems} from 'react-selected-items';
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from 'noop';
 
-export default class extends React.PureComponent {
+export default class extends Component {
   static propTypes = {
     className: PropTypes.string,
     items: PropTypes.array,
