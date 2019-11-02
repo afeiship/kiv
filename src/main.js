@@ -1,2 +1,2 @@
-import ReactRadioGroup from 'components/react-radio-group';
+import ReactRadioGroup from './components';
 export default ReactRadioGroup;

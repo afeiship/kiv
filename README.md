@@ -1,73 +1,50 @@
 # react-radio-group
-> Radio component for react.
+> RadioGroup component for react.
 
-
-## size:
-+ 8.0K	react-radio-group.js
-+ 48K	react-radio-group.js.map
-
-## properties:
-```javascript
-  static propTypes = {
-    className: PropTypes.string,
-    items: PropTypes.array,
-    template: PropTypes.func
-  };
+## install
+```shell
+npm install -S afeiship/react-radio-group
 ```
 
-## usage:
-```jsx
-class App extends React.Component {
-  state = {
-    items: [
-      {
-        val: 1,
-        text: '选项1'
-      }, {
-        val: 2,
-        disabled: true,
-        text: '选项2'
-      }, {
-        val: 3,
-        text: '选项3',
-        selected: true,
-      }, {
-        val: 4,
-        text: '选项4'
-      }, {
-        val: 5,
-        text: '选项5'
-      }
-    ]
-  };
+## usage
+1. import css
+  ```scss
+  @import "~react-radio-group/style.scss";
 
-  _template(item,iconEl){
-    return (
-      <div className="item">
-        {item.text} {iconEl}
-      </div>
-    )
+  // customize your styles:
+  $react-radio-group-options: ()
+  ```
+2. import js
+  ```js
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import ReactRadioGroup from 'react-radio-group';
+  
+  // your app:
+  class App extends React.Component{
+    render(){
+      return (
+        <ReactRadioGroup />
+      )
+    }
   }
 
-  _change(inEvent) {
-    console.log(inEvent.target.value);
-  }
+  // render to dom:
+  ReactDOM.render(<App/>, document.getElementById('app'));
+  ```
 
-  render() {
-    return (
-      <div className="hello-react-radio-group">
-        <ReactRadioGroup items={this.state.items} template={this._template.bind(this)}
-                         onChange={this._change.bind(this)}/>
-      </div>
-    );
-  }
-}
-```
+## documentation
+- https://afeiship.github.io/react-radio-group/
 
+## resources
+- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
+- https://www.valentinog.com/blog/react-webpack-babel/
+- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
+- https://testing-library.com/docs/react-testing-library/api
 
-
-## resource:
-+ http://www.cnblogs.com/Kummy/p/4966937.html
-+ https://github.com/steven5538/vue-button
-+ https://yarnpkg.com/en/docs/install
-
+## todos
+- [ ] Add: semver number for every build files.
+- [ ] Add: need output css files.
+- [ ] Add: PWA support for docs.
+- [ ] Add: source.map file for dist(`you can upload for production debug`).
+- [ ] BUG: npm run dev will clean dist.

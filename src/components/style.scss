@@ -1,42 +1,4 @@
-.react-radio {
-  height: 2.4em;
-  line-height: 2.4em;
-  display: block;
-  padding: 0 1em;
-  border-top: 1px solid #eee;
-  &:active {
-    background-color: #eee;
-  }
+$react-radio-group-options: () !default;
 
-  &-icon {
-    display: inline-block;
-    float: right;
-    &::after {
-      content: '';
-      display: inline-block;
-      border: 2px solid #007aff;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
-      width: 5px;
-      height: 10px;
-    }
-  }
-
-  &[disabled] {
-    opacity: 0.6;
-    pointer-events: none;
-    .react-radio-icon {
-      border-color: #eee;
-    }
-  }
-  &[data-selected=true] {
-    .react-radio-icon {
-      display: inline-block;
-    }
-  }
-  &[data-selected=false] {
-    .react-radio-icon {
-      display: none;
-    }
-  }
+.react-radio-group {
 }
