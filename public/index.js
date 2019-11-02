@@ -33,7 +33,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-container">
-        <ReactRadioGroup defaultValue="v1" items={this.state.items} onChange={this._onChange} />
+        <ReactRadioGroup
+          name="abc"
+          defaultValue="v1"
+          items={this.state.items}
+          onChange={this._onChange}
+        />
       </div>
     );
   }

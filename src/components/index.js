@@ -13,6 +13,7 @@ export default class extends Component {
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
+    name: PropTypes.string.isRequired,
     value: PropTypes.string,
     items: PropTypes.array,
     onChange: PropTypes.func
@@ -24,8 +25,16 @@ export default class extends Component {
   };
   /*===properties end===*/
 
+  _onChange = (inEvent) => {
+    const { value } = inEvent.target.dataset;
+    const { onChange } = this.props;
+    onChange({
+      target: { value }
+    });
+  };
+
   render() {
-    const { className, items, ...props } = this.props;
+    const { className, items, name, onChange, ...props } = this.props;
     return (
       <section
         data-component={CLASS_NAME}
@@ -35,7 +44,14 @@ export default class extends Component {
           const { value, label, ...itemProps } = item;
           return (
             <label key={value} className={`${CLASS_NAME}__item`}>
-              <input type="radio" {...itemProps} className={'is-field'} />
+              <input
+                onChange={this._onChange}
+                type="radio"
+                name={name}
+                data-value={value}
+                {...itemProps}
+                className={'is-field'}
+              />
               <span className="is-label">{label}</span>
             </label>
           );
