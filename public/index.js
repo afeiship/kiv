@@ -35,7 +35,7 @@ class App extends React.Component {
       <div className="app-container">
         <ReactRadioGroup
           name="abc"
-          defaultValue="v1"
+          defaultValue="v2"
           items={this.state.items}
           onChange={this._onChange}
         />

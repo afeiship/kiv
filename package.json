@@ -50,6 +50,7 @@
     "enzyme-adapter-react-16": "^1.15.1",
     "express": "^4.16.4",
     "jest": "^24.5.0",
+    "next-js-core2": "github:afeiship/next-js-core2",
     "prettier": "^1.16.4",
     "rake-git": "github:afeiship/rake-git",
     "react-testing-library": "^6.0.2",

@@ -34,7 +34,14 @@ export default class extends Component {
   };
 
   render() {
-    const { className, items, name, onChange, ...props } = this.props;
+    const {
+      className,
+      defaultValue,
+      items,
+      name,
+      onChange,
+      ...props
+    } = this.props;
     return (
       <section
         data-component={CLASS_NAME}
@@ -48,9 +55,9 @@ export default class extends Component {
                 onChange={this._onChange}
                 type="radio"
                 name={name}
-                data-value={value}
-                {...itemProps}
+                defaultChecked={defaultValue === value}
                 className={'is-field'}
+                {...itemProps}
               />
               <span className="is-label">{label}</span>
             </label>
