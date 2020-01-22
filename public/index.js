@@ -20,24 +20,16 @@ class App extends React.Component {
       }
     ]
   };
-
-  constructor(inProps) {
-    super(inProps);
-    this._onChange = this._onChange.bind(this);
-  }
-
-  _onChange(inEvent) {
-    console.log(inEvent.target.value);
-  }
-
   render() {
+    const { items } = this.state;
     return (
       <div className="app-container">
         <ReactRadioGroup
           name="abc"
-          defaultValue="v2"
-          items={this.state.items}
-          onChange={this._onChange}
+          items={items}
+          onChange={(e) => {
+            console.log('events:', e.target.value);
+          }}
         />
       </div>
     );
