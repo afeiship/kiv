@@ -50,6 +50,17 @@ export default class ReactRadioGroup extends Component {
     template: DEFAULT_TEMPLATE
   };
 
+  getInitialChecked(inValue) {
+    const { value } = this.props;
+    return {
+      checked: typeof value !== 'undefined' ? value === inValue : undefined,
+      undefined:
+        typeof defaultValue !== 'undefined'
+          ? defaultValue === inValue
+          : undefined
+    };
+  }
+
   onChange = (inEvent) => {
     const { value } = inEvent.target.dataset;
     const { onChange } = this.props;
@@ -61,6 +72,7 @@ export default class ReactRadioGroup extends Component {
   render() {
     const {
       className,
+      value,
       defaultValue,
       items,
       template,
@@ -82,8 +94,8 @@ export default class ReactRadioGroup extends Component {
                 type="radio"
                 name={name}
                 data-value={inValue}
-                defaultChecked={defaultValue === inValue}
                 className={'is-field'}
+                {...this.getInitialChecked(inValue)}
                 {...inProps}
               />
             );
