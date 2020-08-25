@@ -1,6 +1,6 @@
-import ReactRadioGroup from '../src/main';
-import ReactDOM from 'react-dom';
 import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactRadioGroup from '../src/main';
 import './assets/style.scss';
 
 class App extends React.Component {

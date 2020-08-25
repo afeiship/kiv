@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import noop from '@feizheng/noop';
-import objectAssign from 'object-assign';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 const CLASS_NAME = 'react-radio-group';
 const DEFAULT_TEMPLATE = ({ item, index }, cb) => {
@@ -16,15 +14,33 @@ const DEFAULT_TEMPLATE = ({ item, index }, cb) => {
   );
 };
 
-export default class extends Component {
+export default class ReactRadioGroup extends Component {
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
+    /**
+     * The input name.
+     */
     name: PropTypes.string.isRequired,
+    /**
+     * Default value.
+     */
     value: PropTypes.string,
+    /**
+     * The radio group options.
+     */
     items: PropTypes.array,
+    /**
+     * The radio option template.
+     */
     template: PropTypes.func,
+    /**
+     * The handler when value changed.
+     */
     onChange: PropTypes.func
   };
 

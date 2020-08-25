@@ -1,4 +1,4 @@
-import baseConfig from '.';
+import baseConfig from './base';
 import merge from 'webpack-merge';
 import {
   configs,
@@ -14,8 +14,10 @@ export default merge(baseConfig, {
   output: outputs.build({
     library: 'ReactRadioGroup'
   }),
-  externals: externals.base({
-    '@feizheng/noop': '@feizheng/noop'
-  }),
-  plugins: [plugins.clean(), plugins.copyStyles()]
+  devtool: 'source-map',
+  externals: externals.node(),
+  plugins: [
+    plugins.clean(),
+    plugins.copyStyles()
+  ]
 });
