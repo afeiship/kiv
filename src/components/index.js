@@ -8,7 +8,7 @@ const DEFAULT_TEMPLATE = ({ item, index }, cb) => {
   const { value, label } = item;
   return (
     <label key={value} className={`${CLASS_NAME}__item`}>
-      {cb()}
+      {cb(value)}
       <span className="is-label">{label}</span>
     </label>
   );
@@ -75,17 +75,16 @@ export default class ReactRadioGroup extends Component {
         className={classNames(CLASS_NAME, className)}
         {...props}>
         {items.map((item, index) => {
-          const { value, label, ...itemProps } = item;
-          const cb = () => {
+          const cb = (inValue, inProps) => {
             return (
               <input
                 onChange={this.onChange}
                 type="radio"
                 name={name}
-                data-value={value}
-                defaultChecked={defaultValue === value}
+                data-value={inValue}
+                defaultChecked={defaultValue === inValue}
                 className={'is-field'}
-                {...itemProps}
+                {...inProps}
               />
             );
           };
