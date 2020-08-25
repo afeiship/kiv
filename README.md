@@ -17,14 +17,15 @@ npm update @feizheng/react-radio-group
 ```
 
 ## properties
-| Name      | Type   | Required | Default | Description                           |
-| --------- | ------ | -------- | ------- | ------------------------------------- |
-| className | string | false    | -       | The extended className for component. |
-| name      | string | true     | -       | The input name.                       |
-| value     | string | false    | -       | Default value.                        |
-| items     | array  | false    | []      | The radio group options.              |
-| template  | func   | false    | -       | The radio option template.            |
-| onChange  | func   | false    | noop    | The handler when value changed.       |
+| Name         | Type   | Required | Default | Description                           |
+| ------------ | ------ | -------- | ------- | ------------------------------------- |
+| className    | string | false    | -       | The extended className for component. |
+| name         | string | true     | -       | The input name.                       |
+| defaultValue | string | false    | -       | Default value.                        |
+| value        | string | false    | -       | Runtime chnaged value.                |
+| items        | array  | false    | []      | The radio group options.              |
+| template     | func   | false    | -       | The radio option template.            |
+| onChange     | func   | false    | noop    | The handler when value changed.       |
 
 
 ## usage

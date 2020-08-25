@@ -29,6 +29,10 @@ export default class ReactRadioGroup extends Component {
     /**
      * Default value.
      */
+    defaultValue: PropTypes.string,
+    /**
+     * Runtime chnaged value.
+     */
     value: PropTypes.string,
     /**
      * The radio group options.
@@ -51,13 +55,14 @@ export default class ReactRadioGroup extends Component {
   };
 
   getInitialChecked(inValue) {
-    const { value } = this.props;
+    const { value, defaultValue } = this.props;
+    const val = (v) => {
+      return typeof v !== 'undefined' ? v === inValue : undefined;
+    };
+
     return {
-      checked: typeof value !== 'undefined' ? value === inValue : undefined,
-      undefined:
-        typeof defaultValue !== 'undefined'
-          ? defaultValue === inValue
-          : undefined
+      checked: val(value),
+      defaultValue: val(defaultValue)
     };
   }
 
