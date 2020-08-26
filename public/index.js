@@ -31,6 +31,17 @@ class App extends React.Component {
             console.log('events:', e.target.value);
           }}
         />
+
+        <hr />
+
+        <ReactRadioGroup
+          name="abcd"
+          disabled
+          items={items}
+          onChange={(e) => {
+            console.log('events:', e.target.value);
+          }}
+        />
       </div>
     );
   }

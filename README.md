@@ -20,6 +20,7 @@ npm update @feizheng/react-radio-group
 | Name         | Type   | Required | Default | Description                           |
 | ------------ | ------ | -------- | ------- | ------------------------------------- |
 | className    | string | false    | -       | The extended className for component. |
+| disabled     | bool   | false    | -       | The input name.                       |
 | name         | string | true     | -       | The input name.                       |
 | defaultValue | string | false    | -       | Default value.                        |
 | value        | string | false    | -       | Runtime chnaged value.                |
@@ -66,6 +67,17 @@ npm update @feizheng/react-radio-group
         <div className="app-container">
           <ReactRadioGroup
             name="abc"
+            items={items}
+            onChange={(e) => {
+              console.log('events:', e.target.value);
+            }}
+          />
+
+          <hr />
+
+          <ReactRadioGroup
+            name="abcd"
+            disabled
             items={items}
             onChange={(e) => {
               console.log('events:', e.target.value);

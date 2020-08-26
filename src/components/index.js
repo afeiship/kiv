@@ -25,6 +25,10 @@ export default class ReactRadioGroup extends Component {
     /**
      * The input name.
      */
+    disabled: PropTypes.bool,
+    /**
+     * The input name.
+     */
     name: PropTypes.string.isRequired,
     /**
      * Default value.
@@ -82,12 +86,14 @@ export default class ReactRadioGroup extends Component {
       items,
       template,
       name,
+      disabled,
       onChange,
       ...props
     } = this.props;
 
     return (
       <section
+        data-disabled={disabled}
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}
         {...props}>
@@ -98,6 +104,7 @@ export default class ReactRadioGroup extends Component {
                 onChange={this.onChange}
                 type="radio"
                 name={name}
+                disabled={disabled}
                 data-value={inValue}
                 className={'is-field'}
                 {...this.getInitialChecked(inValue)}

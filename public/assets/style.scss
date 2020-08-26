@@ -32,4 +32,22 @@ body,
       outline: none;
     }
   }
+
+  hr {
+    margin: 10px auto;
+  }
+
+  .react-radio-group__item {
+    &,
+    > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    input {
+      margin-right: 4px;
+    }
+
+    margin-right: 30px;
+  }
 }
