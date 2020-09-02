@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 const CLASS_NAME = 'react-radio-group';
-const DEFAULT_TEMPLATE = ({ item, index }, cb) => {
+const DEFAULT_TEMPLATE = ({ item }, cb) => {
   const { value, label } = item;
   return (
-    <label key={value} className={`${CLASS_NAME}__item`}>
+    <label key={value} className="is-item">
       {cb(value)}
       <span className="is-label">{label}</span>
     </label>
@@ -23,9 +23,13 @@ export default class ReactRadioGroup extends Component {
      */
     className: PropTypes.string,
     /**
-     * The input name.
+     * The input is disabled.
      */
     disabled: PropTypes.bool,
+    /**
+     * The input is readOnly.
+     */
+    readOnly: PropTypes.bool,
     /**
      * The input name.
      */
@@ -87,6 +91,7 @@ export default class ReactRadioGroup extends Component {
       template,
       name,
       disabled,
+      readOnly,
       onChange,
       ...props
     } = this.props;
@@ -94,6 +99,7 @@ export default class ReactRadioGroup extends Component {
     return (
       <section
         data-disabled={disabled}
+        data-readonly={readOnly}
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}
         {...props}>
@@ -105,6 +111,7 @@ export default class ReactRadioGroup extends Component {
                 type="radio"
                 name={name}
                 disabled={disabled}
+                readOnly={readOnly}
                 data-value={inValue}
                 className={'is-field'}
                 {...this.getInitialChecked(inValue)}

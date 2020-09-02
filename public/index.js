@@ -24,6 +24,7 @@ class App extends React.Component {
     const { items } = this.state;
     return (
       <div className="app-container">
+        <h3>normal</h3>
         <ReactRadioGroup
           name="abc"
           items={items}
@@ -33,10 +34,23 @@ class App extends React.Component {
         />
 
         <hr />
+        <h3>disabled</h3>
 
         <ReactRadioGroup
           name="abcd"
           disabled
+          items={items}
+          onChange={(e) => {
+            console.log('events:', e.target.value);
+          }}
+        />
+        <hr />
+        <h3>readonly</h3>
+
+        <ReactRadioGroup
+          name="abcde"
+          readOnly
+          value={'v1'}
           items={items}
           onChange={(e) => {
             console.log('events:', e.target.value);
