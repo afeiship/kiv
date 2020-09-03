@@ -13,6 +13,6 @@ export default merge(baseConfig, {
     library: 'ReactRadioGroup'
   }),
   devtool: 'source-map',
-  externals: externals.node(),
+  externals: externals.base(),
   plugins: [plugins.banner(), plugins.clean(), plugins.copyStyles()]
 });
