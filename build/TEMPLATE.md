@@ -8,12 +8,7 @@
 
 ## installation
 ```shell
-npm install -S @feizheng/react-radio-group
-```
-
-## update
-```shell
-npm update @feizheng/react-radio-group
+npm install -S @jswork/react-radio-group
 ```
 
 ## properties
@@ -22,7 +17,10 @@ __GENERATE_DOCS__
 ## usage
 1. import css
   ```scss
-  @import "~@feizheng/react-radio-group/dist/style.scss";
+  @import "~@jswork/react-radio-group/dist/style.css";
+
+  // or use sass
+  @import "~@jswork/react-radio-group/dist/style.scss";
 
   // customize your styles:
   $react-radio-group-options: ()
@@ -39,14 +37,14 @@ __GENERATE_DAPP__
 ## license
 Code released under [the MIT license](https://github.com/afeiship/react-radio-group/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@feizheng/react-radio-group
-[version-url]: https://npmjs.org/package/@feizheng/react-radio-group
+[version-image]: https://img.shields.io/npm/v/@jswork/react-radio-group
+[version-url]: https://npmjs.org/package/@jswork/react-radio-group
 
-[license-image]: https://img.shields.io/npm/l/@feizheng/react-radio-group
+[license-image]: https://img.shields.io/npm/l/@jswork/react-radio-group
 [license-url]: https://github.com/afeiship/react-radio-group/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@feizheng/react-radio-group
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/react-radio-group
 [size-url]: https://github.com/afeiship/react-radio-group/blob/master/dist/react-radio-group.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@feizheng/react-radio-group
-[download-url]: https://www.npmjs.com/package/@feizheng/react-radio-group
+[download-image]: https://img.shields.io/npm/dm/@jswork/react-radio-group
+[download-url]: https://www.npmjs.com/package/@jswork/react-radio-group

@@ -1,4 +1,4 @@
-import noop from '@feizheng/noop';
+import noop from '@jswork/noop';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
@@ -125,3 +125,4 @@ export default class ReactRadioGroup extends Component {
     );
   }
 }
+

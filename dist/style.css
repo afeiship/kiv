@@ -1,0 +1,3 @@
+.react-radio-group[data-readonly="true"] {
+  pointer-events: none;
+  user-select: none; }
