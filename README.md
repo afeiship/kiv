@@ -12,11 +12,17 @@ npm install -S @jswork/react-radio-group
 ```
 
 ## properties
-| Name      | Type   | Required | Default | Description                           |
-| --------- | ------ | -------- | ------- | ------------------------------------- |
-| className | string | false    | -       | The extended className for component. |
-| value     | object | false    | null    | The changed value.                    |
-| onChange  | func   | false    | noop    | The change handler.                   |
+| Name         | Type   | Required | Default | Description                           |
+| ------------ | ------ | -------- | ------- | ------------------------------------- |
+| className    | string | false    | -       | The extended className for component. |
+| disabled     | bool   | false    | -       | The input is disabled.                |
+| readOnly     | bool   | false    | -       | The input is readOnly.                |
+| name         | string | true     | -       | The input name.                       |
+| defaultValue | string | false    | -       | Default value.                        |
+| value        | string | false    | -       | Runtime chnaged value.                |
+| items        | array  | false    | []      | The radio group options.              |
+| template     | func   | false    | -       | The radio option template.            |
+| onChange     | func   | false    | noop    | The handler when value changed.       |
 
 
 ## usage
@@ -39,13 +45,61 @@ npm install -S @jswork/react-radio-group
   import './assets/style.scss';
 
   class App extends React.Component {
+    state = {
+      items: [
+        {
+          label: 'optino1',
+          value: 'v1'
+        },
+        {
+          label: 'optino2',
+          value: 'v2'
+        },
+        {
+          label: 'optino3',
+          value: 'v3'
+        }
+      ]
+    };
+
     render() {
+      const { items } = this.state;
       return (
         <ReactDemokit
           className="p-3 app-container"
           url="https://github.com/afeiship/react-radio-group">
-          <ReactRadioGroup className="mb-5 has-text-white" />
-          <button className="button is-primary is-fullwidth">Start~</button>
+          <h3>normal</h3>
+          <ReactRadioGroup
+            name="abc"
+            items={items}
+            onChange={(e) => {
+              console.log('events:', e.target.value);
+            }}
+          />
+
+          <hr />
+          <h3>disabled</h3>
+
+          <ReactRadioGroup
+            name="abcd"
+            disabled
+            items={items}
+            onChange={(e) => {
+              console.log('events:', e.target.value);
+            }}
+          />
+          <hr />
+          <h3>readonly</h3>
+
+          <ReactRadioGroup
+            name="abcde"
+            readOnly
+            value={'v1'}
+            items={items}
+            onChange={(e) => {
+              console.log('events:', e.target.value);
+            }}
+          />
         </ReactDemokit>
       );
     }
