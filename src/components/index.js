@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 const CLASS_NAME = 'react-radio-group';
-const DEFAULT_TEMPLATE = ({ item }, cb) => {
+const DEFAULT_TEMPLATE = ({ item, active }, cb) => {
   const { value, label } = item;
   return (
-    <label key={value} className="is-item">
+    <label key={value} className="is-item" data-active={active}>
       {cb(value)}
       <span className="is-label">{label}</span>
     </label>
@@ -77,9 +77,9 @@ export default class ReactRadioGroup extends Component {
   onChange = (inEvent) => {
     const { value } = inEvent.target.dataset;
     const { onChange } = this.props;
-    onChange({
-      target: { value }
-    });
+    this.value = value;
+    this.forceUpdate();
+    onChange({ target: { value } });
   };
 
   render() {
@@ -95,6 +95,8 @@ export default class ReactRadioGroup extends Component {
       onChange,
       ...props
     } = this.props;
+
+    console.log('render');
 
     return (
       <section
@@ -119,10 +121,12 @@ export default class ReactRadioGroup extends Component {
               />
             );
           };
-          return template({ item, index }, cb);
+          return template(
+            { item, index, active: item.value === this.value },
+            cb
+          );
         })}
       </section>
     );
   }
 }
-
