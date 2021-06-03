@@ -2,6 +2,7 @@ import noop from '@jswork/noop';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import ReactList from '@jswork/react-list';
 
 const CLASS_NAME = 'react-radio-group';
 const DEFAULT_TEMPLATE = ({ item, current }, cb) => {
@@ -77,9 +78,29 @@ export default class ReactRadioGroup extends Component {
   onChange = (inEvent) => {
     const { value } = inEvent.target.dataset;
     const { onChange } = this.props;
-    this.value = value;
+    this.current = value;
     this.forceUpdate();
     onChange({ target: { value } });
+  };
+
+  itemTemplate = ({ item, index }) => {
+    const { name, disabled, template, readOnly } = this.props;
+    const cb = (inValue, inProps) => {
+      return (
+        <input
+          onChange={this.onChange}
+          type="radio"
+          name={name}
+          disabled={disabled}
+          readOnly={readOnly}
+          data-value={inValue}
+          className={'is-field'}
+          {...this.getInitialChecked(inValue)}
+          {...inProps}
+        />
+      );
+    };
+    return template({ item, index, current: this.current }, cb);
   };
 
   render() {
@@ -97,31 +118,15 @@ export default class ReactRadioGroup extends Component {
     } = this.props;
 
     return (
-      <section
+      <ReactList
+        items={items}
+        template={this.itemTemplate}
         data-disabled={disabled}
         data-readonly={readOnly}
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}
-        {...props}>
-        {items.map((item, index) => {
-          const cb = (inValue, inProps) => {
-            return (
-              <input
-                onChange={this.onChange}
-                type="radio"
-                name={name}
-                disabled={disabled}
-                readOnly={readOnly}
-                data-value={inValue}
-                className={'is-field'}
-                {...this.getInitialChecked(inValue)}
-                {...inProps}
-              />
-            );
-          };
-          return template({ item, index, current: this.value }, cb);
-        })}
-      </section>
+        {...props}
+      />
     );
   }
 }
