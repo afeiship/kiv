@@ -31,6 +31,7 @@ class App extends React.Component {
         <h3>normal</h3>
         <ReactRadioGroup
           name="abc"
+          appearance={false}
           items={items}
           onChange={(e) => {
             console.log('events:', e.target.value);

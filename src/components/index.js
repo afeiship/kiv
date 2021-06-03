@@ -32,6 +32,10 @@ export default class ReactRadioGroup extends Component {
      */
     readOnly: PropTypes.bool,
     /**
+     * The input appearance.
+     */
+    appearance: PropTypes.bool,
+    /**
      * The input name.
      */
     name: PropTypes.string.isRequired,
@@ -59,6 +63,7 @@ export default class ReactRadioGroup extends Component {
 
   static defaultProps = {
     items: [],
+    appearance: true,
     onChange: noop,
     template: DEFAULT_TEMPLATE
   };
@@ -84,17 +89,18 @@ export default class ReactRadioGroup extends Component {
   };
 
   itemTemplate = ({ item, index }) => {
-    const { name, disabled, template, readOnly } = this.props;
+    const { name, disabled, appearance, template, readOnly } = this.props;
     const cb = (inValue, inProps) => {
       return (
         <input
           onChange={this.onChange}
           type="radio"
           name={name}
+          data-appearance={appearance}
           disabled={disabled}
           readOnly={readOnly}
           data-value={inValue}
-          className={'is-field'}
+          className="is-field"
           {...this.getInitialChecked(inValue)}
           {...inProps}
         />
@@ -112,6 +118,7 @@ export default class ReactRadioGroup extends Component {
       template,
       name,
       disabled,
+      appearance,
       readOnly,
       onChange,
       ...props
