@@ -1,9 +1,0 @@
-$react-radio-group-options: () !default;
-
-.react-radio-group {
-  // your styles
-  &[data-readonly="true"] {
-    pointer-events: none;
-    user-select: none;
-  }
-}
