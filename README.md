@@ -17,6 +17,7 @@ npm install -S @jswork/react-radio-group
 | className    | string | false    | -       | The extended className for component. |
 | disabled     | bool   | false    | -       | The input is disabled.                |
 | readOnly     | bool   | false    | -       | The input is readOnly.                |
+| appearance   | bool   | false    | true    | The input appearance.                 |
 | name         | string | true     | -       | The input name.                       |
 | defaultValue | string | false    | -       | Default value.                        |
 | value        | string | false    | -       | Runtime chnaged value.                |
@@ -71,6 +72,7 @@ npm install -S @jswork/react-radio-group
           <h3>normal</h3>
           <ReactRadioGroup
             name="abc"
+            appearance={false}
             items={items}
             onChange={(e) => {
               console.log('events:', e.target.value);
