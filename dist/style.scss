@@ -1,0 +1,15 @@
+$react-radio-group-options: () !default;
+
+.react-radio-group {
+  // your styles
+  &[data-readonly="true"] {
+    pointer-events: none;
+    user-select: none;
+  }
+
+  [type="radio"][data-appearance="false"] {
+    opacity: 0;
+    position: absolute;
+    z-index: -100;
+  }
+}
