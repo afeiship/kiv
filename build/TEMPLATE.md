@@ -1,5 +1,5 @@
-# react-radio-group
-> Abstract radio component for react.
+# react-ant-pre-select
+> Antd select with pre element.
 
 [![version][version-image]][version-url]
 [![license][license-image]][license-url]
@@ -8,43 +8,39 @@
 
 ## installation
 ```shell
-npm install -S @jswork/react-radio-group
+npm install -S @jswork/react-ant-pre-select
 ```
-
-## properties
-__GENERATE_DOCS__
 
 ## usage
 1. import css
   ```scss
-  @import "~@jswork/react-radio-group/dist/style.css";
+  @import "~@jswork/react-ant-pre-select/dist/style.css";
 
   // or use sass
-  @import "~@jswork/react-radio-group/dist/style.scss";
+  @import "~@jswork/react-ant-pre-select/dist/style.scss";
 
   // customize your styles:
-  $react-radio-group-options: ()
+  $react-ant-pre-select-options: ()
   ```
 2. import js
   ```js
 __GENERATE_DAPP__
   ```
 
-## documentation
-- https://afeiship.github.io/react-radio-group/
-
+## preview
+- https://afeiship.github.io/react-ant-pre-select/
 
 ## license
-Code released under [the MIT license](https://github.com/afeiship/react-radio-group/blob/master/LICENSE.txt).
+Code released under [the MIT license](https://github.com/afeiship/react-ant-pre-select/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@jswork/react-radio-group
-[version-url]: https://npmjs.org/package/@jswork/react-radio-group
+[version-image]: https://img.shields.io/npm/v/@jswork/react-ant-pre-select
+[version-url]: https://npmjs.org/package/@jswork/react-ant-pre-select
 
-[license-image]: https://img.shields.io/npm/l/@jswork/react-radio-group
-[license-url]: https://github.com/afeiship/react-radio-group/blob/master/LICENSE.txt
+[license-image]: https://img.shields.io/npm/l/@jswork/react-ant-pre-select
+[license-url]: https://github.com/afeiship/react-ant-pre-select/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/react-radio-group
-[size-url]: https://github.com/afeiship/react-radio-group/blob/master/dist/react-radio-group.min.js
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/react-ant-pre-select
+[size-url]: https://github.com/afeiship/react-ant-pre-select/blob/master/dist/react-ant-pre-select.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@jswork/react-radio-group
-[download-url]: https://www.npmjs.com/package/@jswork/react-radio-group
+[download-image]: https://img.shields.io/npm/dm/@jswork/react-ant-pre-select
+[download-url]: https://www.npmjs.com/package/@jswork/react-ant-pre-select
